@@ -1,0 +1,2 @@
+(window.__LOADABLE_LOADED_CHUNKS__=window.__LOADABLE_LOADED_CHUNKS__||[]).push([[30],{OM6p:function(_,n,t){"use strict";t.d(n,"a",(function(){return usePlatformHotkeys}));var i=t("mP80");const usePlatformHotkeys=(_,n,t)=>Object(i.a)(_,n,{filter:()=>!0},t)}}]);
+//# sourceMappingURL=30.d6e4a9d99cb0de1f6fa6.chunk.js.map
