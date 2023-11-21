@@ -27,21 +27,23 @@ const Review = ({ id }) => {
     try {
       async function fetchReviews() {
         console.log("inside fetcHReviews for id: " + id);
-        axios.get(
-          `https://api.yelp.com/v3/businesses/${id}/reviews`,
-          {
-            headers: {
-              Authorization: `Bearer ${apiKey}`,
-              Accept: "application/json",
-              "X-Requested-With": "XmlHttpRequest",
-              "Access-Control-Allow-Origin": "*",
+        axios
+          .get(
+            `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/${id}/reviews`,
+            {
+              headers: {
+                Authorization: `Bearer ${apiKey}`,
+                Accept: "application/json",
+                "X-Requested-With": "XmlHttpRequest",
+                "Access-Control-Allow-Origin": "*",
+              },
             }
-          }
-        ).then((response) => {
-          console.log("object value: " + JSON.stringify(response.data));
-          setReviews(response.data);
-          console.log('value of reviews: ' + reviews);
-        });
+          )
+          .then((response) => {
+            console.log("object value: " + JSON.stringify(response.data));
+            setReviews(response.data);
+            console.log("value of reviews: " + reviews);
+          });
         // if (response){
         //   console.log(JSON.stringify(response));
         // }
@@ -61,9 +63,9 @@ const Review = ({ id }) => {
 
   return (
     <>
-      <button className="btn btn-primary" onClick={showModal}>
+      {/* <button className="btn btn-primary" onClick={showModal}>
         Show Reviews
-      </button>
+      </button> */}
       <Modal show={isOpen} onHide={hideModal} onEntered={modalLoaded}>
         <Modal.Header>
           <Modal.Title>{title}</Modal.Title>

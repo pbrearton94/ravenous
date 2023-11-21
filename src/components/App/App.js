@@ -10,7 +10,7 @@ const App = () => {
 
   const searchYelp = (term, location, sortBy) => {
     Yelp.search(term, location, sortBy).then((businesses) => {
-      console.log('term: ' + term);
+      console.log("term: " + term);
       setBusinesses(businesses);
     });
   };
@@ -18,13 +18,13 @@ const App = () => {
   return (
     <>
       <div className="App">
-        <h1>Not Yelp</h1>
+        <h1>Not Yelp™</h1>
         <SearchBar searchYelp={searchYelp} />
         <BusinessList businesses={businesses} />
       </div>
     </>
   );
-}
+};
 // class App extends React.Component {
 
 //   constructor(props){
